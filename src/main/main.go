@@ -26,6 +26,13 @@ func main() {
 		// 删除用户
 		Group.DELETE("/user/:id", controller.DeleteUserById)
 
+		// 登录账户
+		Group.POST("/user/login", controller.Login)
+		// 登出账户
+		Group.GET("/user/logout/:account", controller.Logout)
+		// 注销账户
+		Group.DELETE("/user/logout/:account", controller.DeleteUserByAccount)
+
 		// 增加帖子
 		Group.POST("/article", controller.InsertArticle)
 		// 查看帖子
